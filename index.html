@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambia Future Tech Hub</title>
+    <title>ZamTech Computer Literacy Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #00a8ff;
-            --primary-purple: #9c27b0;
-            --primary-cyan: #00d4ff;
+            --primary-blue: #0077b6;
+            --primary-purple: #7b2cbf;
+            --primary-cyan: #00b4d8;
             --primary-dark: #0a192f;
-            --primary-light: #ccd6f6;
-            --primary-accent: #64ffda;
+            --primary-light: #f8f9fa;
+            --primary-accent: #48cae4;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --shadow: 0 5px 25px rgba(0, 168, 255, 0.2);
-            --glass: rgba(10, 25, 47, 0.8);
-            --card-bg: rgba(16, 42, 67, 0.6);
+            --shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            --glass: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.9);
         }
         
         * {
@@ -29,8 +29,8 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--primary-light);
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #020c1b 100%);
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             overflow-x: hidden;
             background-attachment: fixed;
@@ -46,18 +46,19 @@
         
         h1, h2, h3, h4, h5 {
             font-weight: 700;
+            color: var(--primary-dark);
         }
         
         /* Header and Navigation */
         header {
-            background: var(--glass);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 5%;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .header-container {
@@ -78,7 +79,7 @@
         .logo-text {
             font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-blue), var(--primary-purple));
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -90,7 +91,7 @@
             display: none;
             background: none;
             border: none;
-            color: var(--primary-accent);
+            color: var(--primary-blue);
             font-size: 1.8rem;
             cursor: pointer;
             transition: var(--transition);
@@ -111,7 +112,7 @@
         }
         
         nav a {
-            color: var(--primary-light);
+            color: var(--primary-dark);
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 1rem;
@@ -123,7 +124,7 @@
         }
         
         nav a:hover, nav a.active {
-            color: var(--primary-accent);
+            color: var(--primary-blue);
         }
         
         nav a::after {
@@ -133,7 +134,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-accent);
+            background: var(--primary-blue);
             transition: var(--transition);
         }
         
@@ -168,7 +169,7 @@
         .section-title h2 {
             font-size: 3rem;
             display: inline-block;
-            background: linear-gradient(to right, var(--primary-cyan), var(--primary-blue));
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -179,8 +180,7 @@
             max-width: 700px;
             margin: 0 auto;
             font-size: 1.2rem;
-            color: var(--primary-light);
-            opacity: 0.8;
+            color: #555;
         }
         
         /* Hero Section */
@@ -191,6 +191,18 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
         
         .hero-content {
@@ -198,16 +210,14 @@
             padding: 0 2rem;
             z-index: 2;
             position: relative;
+            color: white;
         }
         
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
-            background: linear-gradient(45deg, var(--primary-light), var(--primary-cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: white;
         }
         
         .hero h1 span {
@@ -223,6 +233,7 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+            color: #eee;
         }
         
         .btn {
@@ -246,7 +257,7 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 168, 255, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
         .btn:after {
@@ -279,14 +290,12 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .course-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 168, 255, 0.3);
-            border-color: rgba(100, 255, 218, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
         
         .course-icon {
@@ -294,27 +303,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(0, 168, 255, 0.2), rgba(156, 39, 176, 0.2));
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
             font-size: 4.5rem;
-            color: var(--primary-cyan);
+            color: white;
             position: relative;
             overflow: hidden;
-        }
-        
-        .course-icon:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-        }
-        
-        .course-card:hover .course-icon:before {
-            transform: rotate(45deg) translate(100px, 100px);
         }
         
         .course-content {
@@ -323,7 +316,7 @@
         
         .course-content h3 {
             margin-bottom: 1.2rem;
-            color: var(--primary-cyan);
+            color: var(--primary-blue);
             font-size: 1.8rem;
             display: flex;
             align-items: center;
@@ -331,15 +324,26 @@
         
         .course-content h3 i {
             margin-right: 10px;
-            color: var(--primary-accent);
+            color: var(--primary-purple);
         }
         
         .course-details {
             margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .course-details.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .course-details h4 {
-            color: var(--primary-accent);
+            color: var(--primary-purple);
             margin: 1.2rem 0 0.5rem;
             font-size: 1.2rem;
             display: flex;
@@ -364,20 +368,36 @@
             content: '▹';
             position: absolute;
             left: -1.2rem;
-            color: var(--primary-accent);
+            color: var(--primary-blue);
         }
         
         .benefits {
-            background: rgba(100, 255, 218, 0.05);
-            border-left: 3px solid var(--primary-accent);
+            background: rgba(72, 202, 228, 0.1);
+            border-left: 3px solid var(--primary-cyan);
             padding: 1rem;
             border-radius: 0 5px 5px 0;
             margin: 1.5rem 0;
         }
         
         .benefits h4 {
-            color: var(--primary-accent);
+            color: var(--primary-blue);
             margin-bottom: 0.5rem;
+        }
+        
+        .toggle-details {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            margin: 1rem auto 0;
+        }
+        
+        .toggle-details:hover {
+            background: var(--primary-purple);
         }
         
         /* Video Section */
@@ -424,24 +444,23 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             cursor: pointer;
         }
         
         .video-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 168, 255, 0.3);
-            border-color: rgba(100, 255, 218, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .video-thumb {
             height: 160px;
-            background: linear-gradient(45deg, #2a0a47, #0a2f4f);
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-purple));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: var(--primary-cyan);
+            color: white;
         }
         
         .video-info {
@@ -449,8 +468,60 @@
         }
         
         .video-info h4 {
-            color: var(--primary-light);
+            color: var(--primary-dark);
             margin-bottom: 0.5rem;
+        }
+        
+        /* Assignments Section */
+        .assignments-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .assignment-info {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .assignment-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .assignment-info ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .assignment-info li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        .assignment-info li:before {
+            content: '✓';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .assignment-form {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .assignment-form h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
         
         /* Contact Section */
@@ -464,12 +535,11 @@
             background: var(--card-bg);
             border-radius: 15px;
             padding: 2.5rem;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
         }
         
         .contact-info h3 {
-            color: var(--primary-cyan);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
         }
@@ -483,36 +553,35 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: rgba(100, 255, 218, 0.1);
+            background: rgba(72, 202, 228, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: var(--primary-accent);
+            color: var(--primary-blue);
             margin-right: 1.2rem;
             flex-shrink: 0;
         }
         
         .contact-details h4 {
-            color: var(--primary-light);
+            color: var(--primary-dark);
             margin-bottom: 0.3rem;
             font-size: 1.2rem;
         }
         
         .contact-details p {
-            color: var(--primary-light);
-            opacity: 0.8;
+            color: #555;
         }
         
         .contact-details a {
-            color: var(--primary-cyan);
+            color: var(--primary-blue);
             text-decoration: none;
             transition: var(--transition);
         }
         
         .contact-details a:hover {
-            color: var(--primary-accent);
+            color: var(--primary-purple);
             text-decoration: underline;
         }
         
@@ -520,12 +589,11 @@
             background: var(--card-bg);
             border-radius: 15px;
             padding: 2.5rem;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
         }
         
         .contact-form h3 {
-            color: var(--primary-cyan);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
         }
@@ -537,28 +605,30 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--primary-light);
+            color: var(--primary-dark);
             font-weight: 500;
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.9rem 1.2rem;
-            background: rgba(10, 25, 47, 0.5);
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            background: white;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            color: var(--primary-light);
+            color: #333;
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
         }
         
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: var(--primary-cyan);
-            box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.2);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
         }
         
         .form-group textarea {
@@ -568,10 +638,9 @@
         
         /* Footer */
         footer {
-            background: rgba(5, 15, 30, 0.9);
+            background: rgba(10, 25, 47, 0.95);
             padding: 3rem 5%;
             text-align: center;
-            border-top: 1px solid rgba(100, 255, 218, 0.1);
             margin-top: 5rem;
         }
         
@@ -597,7 +666,7 @@
             max-width: 600px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
-            opacity: 0.8;
+            color: #ddd;
         }
         
         .social-links {
@@ -612,8 +681,8 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: rgba(100, 255, 218, 0.1);
-            color: var(--primary-cyan);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
             border-radius: 50%;
             font-size: 1.5rem;
             transition: var(--transition);
@@ -622,22 +691,22 @@
         
         .social-links a:hover {
             background: var(--primary-blue);
-            color: white;
             transform: translateY(-5px);
         }
         
         .copyright {
             padding-top: 2rem;
-            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             width: 100%;
             font-size: 0.9rem;
-            opacity: 0.7;
+            color: #aaa;
         }
         
         /* Responsive Design */
         @media (max-width: 992px) {
             .video-container,
-            .contact-container {
+            .contact-container,
+            .assignments-container {
                 grid-template-columns: 1fr;
             }
             
@@ -660,7 +729,7 @@
                 left: 0;
                 width: 100%;
                 height: 100vh;
-                background: var(--glass);
+                background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 padding: 8rem 2rem 2rem;
@@ -679,6 +748,7 @@
             
             nav a {
                 font-size: 1.5rem;
+                color: var(--primary-dark);
             }
             
             .section {
@@ -714,7 +784,7 @@
     <header>
         <div class="header-container">
             <a href="#home" class="logo nav-link" data-target="home">
-                <div class="logo-text">ZCL</div>
+                <div class="logo-text">ZamTech</div>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -724,6 +794,7 @@
                     <li><a href="#home" class="nav-link active" data-target="home">Home</a></li>
                     <li><a href="#courses" class="nav-link" data-target="courses">Courses</a></li>
                     <li><a href="#videos" class="nav-link" data-target="videos">Videos</a></li>
+                    <li><a href="#assignments" class="nav-link" data-target="assignments">Assignments</a></li>
                     <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
                 </ul>
             </nav>
@@ -732,9 +803,10 @@
 
     <!-- Home Section -->
     <section id="home" class="section active">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Future Tech Education<br><span>for Zambia</span></h1>
-            <p>Empowering Zambians with cutting-edge digital skills for tomorrow's world. From basics to AI applications, we transform your potential into expertise.</p>
+            <h1>Digital Skills for<br><span>Zambia's Future</span></h1>
+            <p>Empowering Zambians with cutting-edge digital skills. From computer basics to AI applications, we transform your potential into expertise.</p>
             <a href="#courses" class="btn nav-link" data-target="courses">Explore Courses</a>
         </div>
     </section>
@@ -752,153 +824,161 @@
                     <i class="fas fa-laptop-code"></i>
                 </div>
                 <div class="course-content">
-                    <h3><i class="fas fa-desktop"></i> Digital Foundations</h3>
+                    <h3><i class="fas fa-desktop"></i> Computer Fundamentals</h3>
                     <p>Master essential computer skills with Zambia-specific examples and applications.</p>
+                    
+                    <button class="toggle-details">View Details</button>
                     
                     <div class="course-details">
                         <h4><i class="fas fa-graduation-cap"></i> What You'll Learn</h4>
                         <ul>
-                            <li>Computer hardware fundamentals (with Zambian market devices)</li>
-                            <li>Windows/MacOS navigation in English & local languages</li>
-                            <li>Internet usage with Zambian network considerations</li>
-                            <li>Email setup for Zambian providers (Zamtel, Airtel)</li>
+                            <li>Computer hardware fundamentals</li>
+                            <li>Windows/MacOS navigation</li>
+                            <li>Internet usage with Zambian networks</li>
+                            <li>Email setup for Zambian providers</li>
                             <li>Zambian e-government portal navigation</li>
-                            <li>Digital safety for Zambian internet users</li>
+                            <li>Digital safety practices</li>
                         </ul>
                         
                         <h4><i class="fas fa-bullseye"></i> Skills Focus</h4>
                         <ul>
-                            <li>Device operation in Zambian context</li>
-                            <li>Localized software proficiency</li>
-                            <li>Zambian internet best practices</li>
+                            <li>Device operation</li>
+                            <li>Software proficiency</li>
+                            <li>Internet best practices</li>
                         </ul>
+                        
+                        <div class="benefits">
+                            <h4><i class="fas fa-star"></i> Benefits</h4>
+                            <p>Gain practical skills for accessing Zambian digital services and improving employment opportunities.</p>
+                        </div>
+                        
+                        <button class="btn enroll-btn" data-course="Computer Fundamentals">
+                            <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
+                        </button>
                     </div>
-                    
-                    <div class="benefits">
-                        <h4><i class="fas fa-star"></i> Benefits for Zambians</h4>
-                        <p>Gain practical skills for accessing Zambian digital services, e-commerce platforms, and improving employment opportunities in Zambia's growing tech sector.</p>
-                    </div>
-                    
-                    <button class="btn enroll-btn" data-course="Digital Foundations">
-                        <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
-                    </button>
                 </div>
             </div>
             
             <!-- Course 2 -->
             <div class="course-card">
                 <div class="course-icon">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-file-alt"></i>
                 </div>
                 <div class="course-content">
-                    <h3><i class="fas fa-brain"></i> AI Applications</h3>
-                    <p>Harness artificial intelligence for Zambian businesses and daily life.</p>
+                    <h3><i class="fas fa-file-word"></i> Microsoft Office Suite</h3>
+                    <p>Master Word, Excel, PowerPoint, and Outlook for professional use.</p>
+                    
+                    <button class="toggle-details">View Details</button>
                     
                     <div class="course-details">
                         <h4><i class="fas fa-graduation-cap"></i> What You'll Learn</h4>
                         <ul>
-                            <li>AI tools for Zambian agriculture optimization</li>
-                            <li>ChatGPT for Zambian business communication</li>
-                            <li>Data analysis for Zambian market insights</li>
-                            <li>AI in Zambian healthcare applications</li>
-                            <li>Automation for Zambian SMEs</li>
-                            <li>Ethical AI considerations in Zambian context</li>
+                            <li>Professional document creation</li>
+                            <li>Data analysis with Excel</li>
+                            <li>Dynamic presentations</li>
+                            <li>Email management</li>
+                            <li>Collaboration tools</li>
+                            <li>Advanced formatting</li>
                         </ul>
                         
                         <h4><i class="fas fa-bullseye"></i> Skills Focus</h4>
                         <ul>
-                            <li>AI tools for Zambian industries</li>
-                            <li>Data-driven decision making</li>
-                            <li>Automation for productivity</li>
+                            <li>Document processing</li>
+                            <li>Data manipulation</li>
+                            <li>Professional communication</li>
                         </ul>
+                        
+                        <div class="benefits">
+                            <h4><i class="fas fa-star"></i> Benefits</h4>
+                            <p>Enhance workplace productivity and professional communication skills.</p>
+                        </div>
+                        
+                        <button class="btn enroll-btn" data-course="Microsoft Office Suite">
+                            <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
+                        </button>
                     </div>
-                    
-                    <div class="benefits">
-                        <h4><i class="fas fa-star"></i> Benefits for Zambians</h4>
-                        <p>Position yourself for Zambia's AI-driven future, enhance business efficiency, and access global opportunities from within Zambia.</p>
-                    </div>
-                    
-                    <button class="btn enroll-btn" data-course="AI Applications">
-                        <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
-                    </button>
                 </div>
             </div>
             
             <!-- Course 3 -->
             <div class="course-card">
                 <div class="course-icon">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-robot"></i>
                 </div>
                 <div class="course-content">
-                    <h3><i class="fas fa-user-friends"></i> Digital Citizenship</h3>
-                    <p>Essential digital literacy tailored for Zambian communities.</p>
+                    <h3><i class="fas fa-brain"></i> AI in Daily Life</h3>
+                    <p>Harness artificial intelligence for Zambian businesses and daily life.</p>
+                    
+                    <button class="toggle-details">View Details</button>
                     
                     <div class="course-details">
                         <h4><i class="fas fa-graduation-cap"></i> What You'll Learn</h4>
                         <ul>
-                            <li>Smartphone usage for Zambian seniors</li>
-                            <li>Digital banking safety in Zambia</li>
-                            <li>Social media for Zambian community building</li>
-                            <li>Accessing Zambian health resources online</li>
-                            <li>Video calls with Zambian family abroad</li>
-                            <li>Recognizing Zambian-specific online scams</li>
+                            <li>AI tools for Zambian agriculture</li>
+                            <li>ChatGPT for business communication</li>
+                            <li>Data analysis for market insights</li>
+                            <li>AI in Zambian healthcare</li>
+                            <li>Automation for SMEs</li>
+                            <li>Ethical AI considerations</li>
                         </ul>
                         
                         <h4><i class="fas fa-bullseye"></i> Skills Focus</h4>
                         <ul>
-                            <li>Mobile technology proficiency</li>
-                            <li>Online safety in Zambian context</li>
-                            <li>Digital communication skills</li>
+                            <li>AI tools application</li>
+                            <li>Data-driven decision making</li>
+                            <li>Automation strategies</li>
                         </ul>
+                        
+                        <div class="benefits">
+                            <h4><i class="fas fa-star"></i> Benefits</h4>
+                            <p>Position yourself for Zambia's AI-driven future and enhance business efficiency.</p>
+                        </div>
+                        
+                        <button class="btn enroll-btn" data-course="AI in Daily Life">
+                            <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
+                        </button>
                     </div>
-                    
-                    <div class="benefits">
-                        <h4><i class="fas fa-star"></i> Benefits for Zambians</h4>
-                        <p>Bridge the digital divide in Zambia, connect with family, access services, and participate in the digital economy regardless of age or background.</p>
-                    </div>
-                    
-                    <button class="btn enroll-btn" data-course="Digital Citizenship">
-                        <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
-                    </button>
                 </div>
             </div>
             
             <!-- Course 4 -->
             <div class="course-card">
                 <div class="course-icon">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-globe"></i>
                 </div>
                 <div class="course-content">
-                    <h3><i class="fas fa-chart-line"></i> Workplace Tech</h3>
-                    <p>Master workplace technologies for Zambian business environments.</p>
+                    <h3><i class="fas fa-code"></i> Web Development</h3>
+                    <p>Learn to build responsive websites from scratch.</p>
+                    
+                    <button class="toggle-details">View Details</button>
                     
                     <div class="course-details">
                         <h4><i class="fas fa-graduation-cap"></i> What You'll Learn</h4>
                         <ul>
-                            <li>Microsoft Office for Zambian business documentation</li>
-                            <li>Remote collaboration for Zambian distributed teams</li>
-                            <li>Digital marketing for Zambian businesses</li>
-                            <li>Data analysis with Zambian economic data</li>
-                            <li>Cloud tools accessible in Zambia</li>
-                            <li>Cybersecurity for Zambian enterprises</li>
+                            <li>HTML5 and CSS3 fundamentals</li>
+                            <li>JavaScript programming</li>
+                            <li>Responsive design principles</li>
+                            <li>Front-end frameworks</li>
+                            <li>Basic back-end concepts</li>
+                            <li>Website deployment</li>
                         </ul>
                         
                         <h4><i class="fas fa-bullseye"></i> Skills Focus</h4>
                         <ul>
-                            <li>Business software mastery</li>
-                            <li>Remote collaboration techniques</li>
-                            <li>Data-driven business decisions</li>
+                            <li>Coding fundamentals</li>
+                            <li>Responsive design</li>
+                            <li>Problem-solving</li>
                         </ul>
+                        
+                        <div class="benefits">
+                            <h4><i class="fas fa-star"></i> Benefits</h4>
+                            <p>Acquire skills for creating websites and web applications for Zambian businesses.</p>
+                        </div>
+                        
+                        <button class="btn enroll-btn" data-course="Web Development">
+                            <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
+                        </button>
                     </div>
-                    
-                    <div class="benefits">
-                        <h4><i class="fas fa-star"></i> Benefits for Zambians</h4>
-                        <p>Enhance your employability in Zambia's competitive job market, increase productivity, and position yourself for leadership roles in Zambian companies.</p>
-                    </div>
-                    
-                    <button class="btn enroll-btn" data-course="Workplace Tech">
-                        <i class="fab fa-whatsapp"></i> Enroll via WhatsApp
-                    </button>
                 </div>
             </div>
         </div>
@@ -914,7 +994,7 @@
         <div class="video-container">
             <div class="video-content">
                 <h3>Featured Tutorial: Digital Banking in Zambia</h3>
-                <p>Learn how to safely use mobile banking apps like Zanaco, Stanbic, and Airtel Money with our step-by-step guide designed specifically for Zambian users.</p>
+                <p>Learn how to safely use mobile banking apps with our step-by-step guide designed specifically for Zambian users.</p>
                 <div class="video-player">
                     <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Zambian Digital Banking Tutorial" allowfullscreen></iframe>
                 </div>
@@ -926,8 +1006,78 @@
                         <i class="fas fa-play"></i>
                     </div>
                     <div class="video-info">
+                        <h4>Computer Basics Tutorial</h4>
+                        <p>Getting started with computers</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4>Excel for Beginners</h4>
+                        <p>Spreadsheet fundamentals</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4>PowerPoint Mastery</h4>
+                        <p>Creating professional presentations</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4>AI Tools for Zambians</h4>
+                        <p>Practical AI applications</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4>Internet Safety Guide</h4>
+                        <p>Protecting yourself online</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4>HTML & CSS Basics</h4>
+                        <p>Building your first webpage</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4>Email Management</h4>
+                        <p>Professional communication</p>
+                    </div>
+                </div>
+                
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-info">
                         <h4>Zambian eGov Portal Guide</h4>
-                        <p>Accessing government services online</p>
+                        <p>Accessing government services</p>
                     </div>
                 </div>
                 
@@ -950,16 +1100,82 @@
                         <p>Tools and techniques</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments" class="section">
+        <div class="section-title">
+            <h2>Assignment Help</h2>
+            <p>Get professional assistance with your academic and technical assignments</p>
+        </div>
+        
+        <div class="assignments-container">
+            <div class="assignment-info">
+                <h3>Expert Assignment Assistance</h3>
+                <p>Our team of qualified professionals is ready to help you with your assignments across various computer-related subjects.</p>
                 
-                <div class="video-item">
-                    <div class="video-thumb">
-                        <i class="fas fa-play"></i>
+                <h4>We cover:</h4>
+                <ul>
+                    <li>Computer Science Fundamentals</li>
+                    <li>Programming Assignments (Python, Java, C++)</li>
+                    <li>Database Design and Implementation</li>
+                    <li>Web Development Projects</li>
+                    <li>Networking and Security</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>AI and Machine Learning Projects</li>
+                    <li>Technical Report Writing</li>
+                </ul>
+                
+                <p>Submit your assignment details and requirements, and we'll provide you with a quote and timeline for completion.</p>
+            </div>
+            
+            <div class="assignment-form">
+                <h3>Request Assignment Help</h3>
+                <form id="assignmentForm">
+                    <div class="form-group">
+                        <label for="a-name">Full Name</label>
+                        <input type="text" id="a-name" name="name" required>
                     </div>
-                    <div class="video-info">
-                        <h4>Tech Entrepreneurship</h4>
-                        <p>Starting digital business in Zambia</p>
+                    
+                    <div class="form-group">
+                        <label for="a-email">Email Address</label>
+                        <input type="email" id="a-email" name="email" required>
                     </div>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="a-phone">Phone Number</label>
+                        <input type="tel" id="a-phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="a-course">Course/Subject</label>
+                        <input type="text" id="a-course" name="course" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="a-topic">Assignment Topic</label>
+                        <input type="text" id="a-topic" name="topic" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="a-deadline">Deadline</label>
+                        <input type="date" id="a-deadline" name="deadline" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="a-details">Assignment Details</label>
+                        <textarea id="a-details" name="details" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="a-files">Upload Files (Optional)</label>
+                        <input type="file" id="a-files" name="files">
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Request</button>
+                </form>
             </div>
         </div>
     </section>
@@ -980,7 +1196,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-details">
-                        <h4>KateteHQ</h4>
+                        <h4>Katete Ibex Compound</h4>
                         <p>Plot 123, Cairo Road<br>Lusaka, Zambia</p>
                     </div>
                 </div>
@@ -1038,6 +1254,18 @@
                     </div>
                     
                     <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="courses">Course Information</option>
+                            <option value="enrollment">Enrollment</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="support">Technical Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="message">Your Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
@@ -1051,7 +1279,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">ZCL</div>
+            <div class="footer-logo">ZamTech</div>
             <p class="footer-text">Empowering Zambia through digital literacy and technological innovation</p>
             
             <div class="social-links">
@@ -1061,19 +1289,13 @@
                 <a href="https://wa.me/260773838434" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#">
+                <a href="https://youtube.com/@tecwitheddie730?si=5rN60BXYRe647Flf" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Zambia Computer Literacy Hub. All rights reserved.</p>
+                <p>&copy; 2025 ZamTech Computer Literacy Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1110,6 +1332,9 @@
                     // Close mobile menu
                     menu.classList.remove('show');
                     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
                 }
                 
                 // Update active navigation link
@@ -1117,9 +1342,21 @@
                     link.classList.remove('active');
                 });
                 this.classList.add('active');
+            });
+        });
+        
+        // Course details toggle
+        document.querySelectorAll('.toggle-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const details = this.parentElement.querySelector('.course-details');
+                details.classList.toggle('show');
                 
-                // Scroll to top
-                window.scrollTo(0, 0);
+                // Change button text
+                if(details.classList.contains('show')) {
+                    this.textContent = 'Hide Details';
+                } else {
+                    this.textContent = 'View Details';
+                }
             });
         });
         
@@ -1146,9 +1383,23 @@
             
             // Reset form
             this.reset();
+        });
+        
+        // Assignment form submission
+        const assignmentForm = document.getElementById('assignmentForm');
+        
+        assignmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // In a real implementation, we would send the form data to the server
-            // This is handled by Formspree in the form action
+            // Get form values
+            const name = document.getElementById('a-name').value;
+            const topic = document.getElementById('a-topic').value;
+            
+            // Show confirmation
+            alert(`Thank you, ${name}! Your assignment request for "${topic}" has been received. We'll contact you shortly with a quote.`);
+            
+            // Reset form
+            this.reset();
         });
         
         // Set home as active section on page load
